@@ -162,9 +162,9 @@ const plugin = ({ prefix }: { prefix: string }) =>
     app.get(`${prefix}/hi`, () => 'hi')
 
 new Elysia()
-    .use(plugin(
-        prefix: '/v2'
-    }))
+    .use(
+      plugin({ prefix: '/v2' })
+    )
     .get('/version', ({ store }) => store['plugin-version'])
     .listen(8080)
 ```
